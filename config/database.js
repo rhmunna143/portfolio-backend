@@ -1,6 +1,32 @@
 const path = require('path');
+const parse = require('pg-connection-string').parse;
 
 module.exports = ({ env }) => {
+
+  if (env('NODE_ENV') === 'production') {
+    const config = parse(env('DATABASE_URL'));
+    return {
+      defaultConnection: 'default',
+      connections: {
+        default: {
+          connector: 'bookshelf',
+          settings: {
+            client: 'postgres',
+            host: config.host,
+            port: config.port,
+            database: config.database,
+            username: config.user,
+            password: config.password,
+            ssl: { rejectUnauthorized: false },
+          },
+          options: {
+            ssl: true,
+          },
+        },
+      },
+    };
+  }
+  
   const client = env('DATABASE_CLIENT', 'sqlite');
 
   const connections = {
@@ -26,6 +52,7 @@ module.exports = ({ env }) => {
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
+
     mysql2: {
       connection: {
         host: env('DATABASE_HOST', 'localhost'),
@@ -47,6 +74,7 @@ module.exports = ({ env }) => {
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
+
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
@@ -70,6 +98,7 @@ module.exports = ({ env }) => {
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
+
     sqlite: {
       connection: {
         filename: path.join(
