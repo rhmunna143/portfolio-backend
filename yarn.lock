@@ -2051,10 +2051,10 @@
     aria-hidden "^1.2.4"
     react-remove-scroll "^2.5.9"
 
-"@strapi/utils@4.24.5":
-  version "4.24.5"
-  resolved "https://registry.npmjs.org/@strapi/utils/-/utils-4.24.5.tgz"
-  integrity sha512-KPhzgXaJFC2y5JVW1RGVxmkSzLdhIdoVgMTCRf90veyfwkedHXC5iQ0qCvxRvMuvnfw6DqMaqewHGEkt1COM4g==
+"@strapi/utils@^4.25.0", "@strapi/utils@4.25.0":
+  version "4.25.0"
+  resolved "https://registry.npmjs.org/@strapi/utils/-/utils-4.25.0.tgz"
+  integrity sha512-CXhdbtkL+gXKJxxd64AsTrUvjqcP/J12szt03/mmIzCxs6GsRSsQkcUNfnfvD5AJ2VNzA5xh00iD9SFokWwpdA==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -2063,10 +2063,10 @@
     p-map "4.0.0"
     yup "0.32.9"
 
-"@strapi/utils@4.25.0":
-  version "4.25.0"
-  resolved "https://registry.npmjs.org/@strapi/utils/-/utils-4.25.0.tgz"
-  integrity sha512-CXhdbtkL+gXKJxxd64AsTrUvjqcP/J12szt03/mmIzCxs6GsRSsQkcUNfnfvD5AJ2VNzA5xh00iD9SFokWwpdA==
+"@strapi/utils@4.24.5":
+  version "4.24.5"
+  resolved "https://registry.npmjs.org/@strapi/utils/-/utils-4.24.5.tgz"
+  integrity sha512-KPhzgXaJFC2y5JVW1RGVxmkSzLdhIdoVgMTCRf90veyfwkedHXC5iQ0qCvxRvMuvnfw6DqMaqewHGEkt1COM4g==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
